@@ -32,7 +32,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
   // Serve up static assets
   if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '..client/build')));
+    app.use(express.static(path.join(__dirname, '../client/build')));
   }
 
   app.get('*', (req, res) => {
@@ -44,7 +44,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
       console.log(`API server running on port ${PORT}!`);
       // log where we can go to test our GQL API
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    })  
+    })
   })
 };
 
